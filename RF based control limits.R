@@ -35,7 +35,7 @@ for (i in Nw:length(Train2[,1])) {
                num.trees = 100,
                tuneGrid=  tgrid,
                #preProcess=c("center", "scale"),
-               trControl = trainControl(method="cv", number = 3, verboseIter = T, classProbs = T))
+               trControl = trainControl(method="cv", number = 10, verboseIter = T, classProbs = T))
   
   Predict<-predict(fit, type='prob', OOB=TRUE)
   p1[i]<-sum(Predict[(N0+1):(N0+Nw),2])/Nw
